@@ -340,3 +340,8 @@ em { font-style: normal; color: var(--teal-3); }
 .illus { position: absolute; bottom: 12px; inset-inline-start: 12px; background: rgba(255,255,255,.92); color: var(--muted); font-size: 12px; padding: 3px 10px; border-radius: 999px; }
 .card__media, .cs__hero { position: relative; }
 .card__media img[src$=".svg"], .cs__hero img[src$=".svg"] { object-fit: cover; }
+
+/* نقشة الأقواس الشفافة خلف الأخضر */
+.hero__panel { background-image: url("assets/pattern.svg"), radial-gradient(60% 80% at 15% 30%, rgba(62, 122, 112, 0.55), transparent 70%); background-size: 300px 420px, auto; }
+.section--teal { background-image: url("assets/pattern.svg"); background-size: 300px 420px; }
+.ring__inner, .hcard__hl { background-image: url("assets/pattern.svg"); background-size: 180px 252px; }
