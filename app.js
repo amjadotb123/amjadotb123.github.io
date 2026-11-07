@@ -69,7 +69,7 @@
     .map(
       (p) => `
     <article class="feature reveal" data-id="${esc(p.id)}" data-cat="${esc(p.category)}" tabindex="0" role="button" aria-label="${esc(p.title)}">
-      <div class="feature__media">${media(p)}<span class="badge">مشروع مميّز</span></div>
+      <div class="feature__media">${media(p)}</div>
       <div class="feature__body">
         ${org(p)}${meta(p)}
         <h3>${esc(p.title)}</h3>
@@ -126,7 +126,7 @@
           <div class="cs__block"><h4>النتيجة</h4><p>${esc(p.result)}</p></div>
         </div>
         ${p.gallery?.length ? `<div class="cs__gallery">${p.gallery.map((g) => `<img src="${esc(g)}" alt="" loading="lazy">`).join("")}</div>` : ""}
-        <div class="cs__links">${(p.links || []).map((l) => `<a class="btn btn--orange" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ${arrow}</a>`).join("")}
+        <div class="cs__links">${(p.links || []).map((l) => `<a class="btn btn--primary" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ${arrow}</a>`).join("")}
           <a class="btn btn--line" href="#contact" data-close>ناقشني في هذا المشروع</a></div>
       </div>`;
     modal.showModal();
@@ -162,8 +162,6 @@
   $("#skillsList").innerHTML = D.skills
     .map((g, i) => `<div class="skill reveal"><div class="skill__icon"><svg viewBox="0 0 24 24">${sIcons[i % 3]}</svg></div><h3>${esc(g.title)}</h3>${tags(g.items)}</div>`)
     .join("");
-  const words = [...new Set(D.skills.flatMap((g) => g.items))].map((w) => `<span>${esc(w)}</span>`).join("");
-  $("#marquee").innerHTML = words + words;
 
   /* ---------- reveal + counters ---------- */
   const countUp = (el) => {
