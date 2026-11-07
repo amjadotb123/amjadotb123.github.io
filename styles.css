@@ -345,3 +345,5 @@ em { font-style: normal; color: var(--teal-3); }
 .hero__panel { background-image: url("assets/pattern.svg"), radial-gradient(60% 80% at 15% 30%, rgba(62, 122, 112, 0.55), transparent 70%); background-size: 300px 420px, auto; }
 .section--teal { background-image: url("assets/pattern.svg"); background-size: 300px 420px; }
 .ring__inner, .hcard__hl { background-image: url("assets/pattern.svg"); background-size: 180px 252px; }
+
+.brand__logo { width: 44px; height: 44px; border-radius: 50%; display: block; box-shadow: 0 0 0 2px rgba(255,255,255,.25); }
