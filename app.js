@@ -5,7 +5,6 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const esc = (s = "") => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const arrow = '<svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>';
-  const tile = (cls = "") => `<svg class="orn ${cls}" aria-hidden="true"><use href="#tile"/></svg>`;
 
   /* ---------- profile ---------- */
   document.title = `${P.shortName || P.name} | معرض الأعمال`;
@@ -37,7 +36,7 @@
         <div><small>${esc(H.eyebrow)}</small><strong>${esc(H.title)}</strong></div>
         <span class="avatar">${esc(P.initials)}</span>
       </div>
-      <div class="hcard__hl">${tile()}
+      <div class="hcard__hl">
         <small>${esc(H.sub)}</small><b>${esc(H.highlight)}</b><span>${esc(H.highlightLabel)}</span><br>
         <a href="#work">شاهد المشروع</a>
       </div>
@@ -57,8 +56,8 @@
   /* ---------- projects ---------- */
   const media = (p) =>
     p.cover
-      ? `<img src="${esc(p.cover)}" alt="${esc(p.title)}" loading="lazy"${p.coverPos ? ` style="object-position:${esc(p.coverPos)}"` : ""}>`
-      : `<div class="ph" style="--c:${esc(p.accent || "#1E4A44")}">${tile()}<span>${esc(p.title.trim()[0])}</span></div>`;
+      ? `<img src="${esc(p.cover)}" alt="${esc(p.title)}" loading="lazy"${p.coverPos ? ` style="object-position:${esc(p.coverPos)}"` : ""}>${p.illustrative ? '<span class="illus">صورة توضيحية</span>' : ""}`
+      : `<div class="ph" style="--c:${esc(p.accent || "#1E4A44")}"><span>${esc(p.title.trim()[0])}</span></div>`;
   const tags = (t) => `<div class="tags">${t.map((x) => `<span class="tag">${esc(x)}</span>`).join("")}</div>`;
   const meta = (p) => `<div class="meta"><b>${esc(p.category)}</b><span>•</span><span>${esc(p.year)}</span></div>`;
   const org = (p) => (p.org ? `<span class="org">${esc(p.org)}</span>` : "");

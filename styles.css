@@ -331,3 +331,12 @@ em { font-style: normal; color: var(--teal-3); }
 .filter.active { background: var(--teal); }
 ::selection { background: var(--mint); color: var(--ink); }
 .reveal { transform: translateY(10px); transition: opacity 0.6s ease, transform 0.6s ease; }
+
+/* بدون نقشة */
+.orn { display: none; }
+.ring__inner { place-items: center; }
+.ring__mark { font: 800 96px/1 var(--f-display); color: var(--star); opacity: .9; margin-top: -40px; }
+.ring__label { position: absolute; bottom: 0; }
+.illus { position: absolute; bottom: 12px; inset-inline-start: 12px; background: rgba(255,255,255,.92); color: var(--muted); font-size: 12px; padding: 3px 10px; border-radius: 999px; }
+.card__media, .cs__hero { position: relative; }
+.card__media img[src$=".svg"], .cs__hero img[src$=".svg"] { object-fit: cover; }
